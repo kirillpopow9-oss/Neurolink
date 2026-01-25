@@ -1,0 +1,478 @@
+/* Комментарии */
+.comments-section {
+    background-color: #141a24;
+    border-radius: 15px;
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+.comment-form {
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #b0b0b0;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1a2332;
+    border: 1px solid #2a3a4a;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #0088ff, #00d4ff);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.comment {
+    background-color: #1a2332;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #0088ff;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.comment-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.comment-text {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* Адаптивность для комментариев */
+@media (max-width: 768px) {
+    .comments-section {
+        padding: 2rem;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Игровая статистика */
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.game-stats span {
+    background: rgba(0, 255, 136, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--accent-color);
+}
+
+/* Игра на память */
+.memory-game {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+}
+
+.memory-cell {
+    background: var(--darker-bg);
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.memory-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.memory-cell.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    animation: memoryPulse 0.5s;
+}
+
+@keyframes memoryPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Игра на реакцию */
+.reaction-game {
+    padding: 2rem 0;
+}
+
+.reaction-area {
+    background: var(--darker-bg);
+    height: 300px;
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.reaction-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.reaction-target {
+    position: absolute;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.reaction-target:hover {
+    transform: scale(1.2);
+}
+
+/* Игра с паттернами */
+.pattern-game {
+    padding: 2rem 0;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 15px;
+    justify-content: center;
+}
+
+.pattern-card {
+    width: 100px;
+    height: 100px;
+    background: var(--darker-bg);
+    border: 3px solid var(--accent-color);
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.pattern-card.flipped {
+    background: var(--card-bg);
+}
+
+.pattern-card.matched {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    border-color: var(--accent-color);
+    animation: matchPulse 0.5s;
+}
+
+.pattern-card:hover:not(.matched) {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+@keyframes matchPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* Игра на координацию */
+.coordination-game {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.balance-container {
+    flex: 1;
+    max-width: 300px;
+}
+
+.balance-label {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.balance-bar {
+    height: 400px;
+    background: var(--darker-bg);
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-ball {
+    font-size: 2.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.3s;
+}
+
+.balance-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.mini-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mini-btn:hover {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    transform: scale(1.1);
+}
+
+/* Таблица рекордов */
+.leaderboard-container {
+    background: linear-gradient(135deg, var(--card-bg), var(--darker-bg));
+    border: 3px solid var(--accent-color);
+    border-radius: 25px;
+    padding: 3rem;
+    margin: 5rem 0 3rem 0;
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
+}
+
+.leaderboard-container h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px var(--accent-color);
+}
+
+.leaderboard-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.game-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.selector-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background: var(--darker-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.selector-btn:hover {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+}
+
+.selector-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--dark-bg);
+    border-color: var(--accent-color);
+}
+
+.leaderboard-table {
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+.leaderboard-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--darker-bg);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.leaderboard-table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--dark-bg);
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.leaderboard-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    color: var(--text-secondary);
+}
+
+.leaderboard-table tbody tr {
+    transition: all 0.3s;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: scale(1.01);
+}
+
+.leaderboard-table tbody tr:nth-child(1) td:first-child {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.leaderboard-table tbody tr:nth-child(2) td:first-child {
+    color: #C0C0C0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.leaderboard-table tbody tr:nth-child(3) td:first-child {
+    color: #CD7F32;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.no-records {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 2rem !important;
+}
+
+/* Управление игрой */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.game-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border: none;
+    border-radius: 30px;
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.game-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.5);
+}
+
+.sim-note {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background-color: #1a2332;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.contact-card p {
+    color: #b0b0b0;
+}
