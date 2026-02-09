@@ -1270,6 +1270,8 @@ footer {
 }
 
 /* Игра 4: Нейро-реакция */
+
+
 .reaction-game {
     background: rgba(255, 170, 0, 0.05);
     border-radius: 15px;
@@ -1282,6 +1284,14 @@ footer {
 }
 
 .reaction-area {
+    background: var(--darker-bg);
+    height: 300px;
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+/*
+.reaction-area {
     width: 100%;
     height: 100%;
     position: relative;
@@ -1289,7 +1299,7 @@ footer {
     border-radius: 10px;
     border: 2px dashed #2a3a4a;
 }
-
+*/
 .reaction-message {
     position: absolute;
     top: 50%;
